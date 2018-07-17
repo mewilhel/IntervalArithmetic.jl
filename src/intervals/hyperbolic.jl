@@ -67,3 +67,11 @@ for f in (:tanh, :asinh, :acosh, :atanh)
         atomic(Interval{Float64}, ($f)(big53(a)) )
     end
 end
+
+
+csch(x::Interval) = divide_positive_constant(1.0,sinh(x))
+sech(x::Interval) = divide_positive_constant(1.0,cosh(x))
+coth(x::Interval) = divide_positive_constant(1.0,tanh(x))
+acsch(x::Interval) = asinh(divide_positive_constant(1.0,x))
+asech(x::Interval) = acosh(divide_positive_constant(1.0,x))
+acoth(x::Interval{T}) where T = atanh(divide_positive_constant(1.0,x))

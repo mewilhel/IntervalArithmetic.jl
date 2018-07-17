@@ -200,3 +200,69 @@ end
     @test cos(x) == -1..1
     @test tan(x) == -∞..∞
 end
+
+@testset "sec,cos,cot" begin
+
+    x1 = Interval(-1.0,1.0)
+    x2 = Interval(-1.0,1.0)
+    x3 = Interval(-1.0,1.0)
+
+    @test csc(x1) == x1
+    @test csc(x2) == x1
+    @test csc(x3) == x1
+
+    @test sec(x1) == x1
+    @test sec(x2) == x1
+    @test sec(x3) == x1
+
+    @test cot(x1) == x1
+    @test cot(x2) == x1
+    @test cot(x3) == x1
+
+end
+
+@testset "asec,acos,acot" begin
+
+    x1 = Interval(-1.0,1.0)
+    x2 = Interval(-1.0,1.0)
+    x3 = Interval(-1.0,1.0)
+
+    @test acsc(x1) == x1
+    @test acsc(x2) == x1
+    @test acsc(x3) == x1
+
+    @test asec(x1) == x1
+    @test asec(x2) == x1
+    @test asec(x3) == x1
+
+    @test acot(x1) == x1
+    @test acot(x2) == x1
+    @test acot(x3) == x1
+
+end
+
+@testset "Scaled Trignometric Functions" begin
+
+    x = Interval(-1.0, 3.0)
+
+    @test sind(x) == x
+    @test cosd(x) == x
+    @test tand(x) == x
+    @test secd(x) == x
+    @test cscd(x) == x
+    @test cotd(x) == x
+
+    @test asind(x) == x
+    @test acosd(x) == x
+    @test atand(x) == x
+    @test asecd(x) == x
+    @test acscd(x) == x
+    @test acotd(x) == x
+
+    @test sinpi(x) == x
+    @test cospi(x) == x
+
+    @test deg2rad(x) == x
+    @test rad2deg(x) == x
+
+end

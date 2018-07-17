@@ -63,3 +63,31 @@ setprecision(Interval, Float64)
         @test tanh(a) ⊆ sinh(a)/cosh(a)
     end
 end
+
+
+@testset "Hyperbolic Co- Functions" begin
+    x1 = Interval(1.0,2.0)
+    x2 = Interval(1.0,2.0)
+    x3 = Interval(1.0,2.0)
+
+    @test csch(x1) == x1
+    @test sech(x1) == x1
+    @test coth(x1) == x1
+    @test acsch(x1) == x1
+    @test asech(x1) == x1
+    @test acoth(x1) == x1
+
+    @test csch(x2) == x2
+    @test sech(x2) == x2
+    @test coth(x2) == x1
+    @test acsch(x2) == x1
+    @test asech(x2) == x1
+    @test acoth(x2) == x2
+
+    @test csch(x3) == x1
+    @test sech(x3) == x1
+    @test coth(x3) == x1
+    @test acsch(x3) == x1
+    @test asech(x3) == x1
+    @test acoth(x3) == x1
+end
